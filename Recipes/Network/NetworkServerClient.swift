@@ -11,9 +11,8 @@ import Contentful
 
 class NetworkServerClient {
 
-    let client = Client(spaceId: "kk2bw5ojx476",
-    accessToken: "7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c")
+    let client = Client(spaceId: ConfigurationManager.infoForKey(.contentfulSpaceID) ?? "",
+                        accessToken: ConfigurationManager.infoForKey(.contentfulAccessToken) ?? "")
 
     
-
 }
