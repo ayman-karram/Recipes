@@ -12,7 +12,22 @@ import Contentful
 class NetworkServerClient {
 
     let client = Client(spaceId: ConfigurationManager.infoForKey(.contentfulSpaceID) ?? "",
-                        accessToken: ConfigurationManager.infoForKey(.contentfulAccessToken) ?? "")
+                        accessToken: ConfigurationManager.infoForKey(.contentfulAccessToken) ?? "",
+                        contentTypeClasses: [Recipe.self, Chef.self])
 
-    
+}
+
+//MARK: - Recipes
+extension NetworkServerClient: RecipesServiceProtocol {
+    func fetchAllRecipies(completion: @escaping(FetchRecipesResult) -> Void) {
+        let query = QueryOn<Recipe>.where(contentTypeId: Recipe.contentTypeId)
+        client.fetchArray(of: Recipe.self, matching: query) { (result: Result<HomogeneousArrayResponse<Recipe>>) in
+            switch result {
+            case .success(let allRecipiesArray):
+                completion(.success(payload: allRecipiesArray.items))
+            case .error(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

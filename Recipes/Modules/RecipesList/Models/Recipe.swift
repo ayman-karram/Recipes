@@ -21,6 +21,7 @@ class Recipe: EntryDecodable, FieldKeysQueryable {
     var chef: Chef?
     var photo: Asset?
 
+    // To be used for mock model for unit test
     init(id: String, updatedAt: Date?, createdAt: Date?, localeCode: String?, chef: Chef?, photo: Asset?, title: String?) {
         self.id = id
         self.updatedAt = updatedAt

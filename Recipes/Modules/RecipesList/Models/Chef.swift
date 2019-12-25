@@ -19,6 +19,7 @@ class Chef: EntryDecodable, FieldKeysQueryable {
     //Fields
     var name: String?
 
+    // To be used for mock model for unit test 
     internal init(id: String, updatedAt: Date?, createdAt: Date?, localeCode: String?, name: String?) {
         self.id = id
         self.updatedAt = updatedAt
