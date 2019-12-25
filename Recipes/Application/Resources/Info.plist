@@ -18,12 +18,16 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Contentful access token</key>
+	<string>$(CONTENTFUL_ACCESS_TOKEN)</string>
+	<key>Contentful space id</key>
+	<string>$(CONTENTFUL_SPACE_ID)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -41,9 +45,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>Contentful space id</key>
-	<string>$(CONTENTFUL_SPACE_ID)</string>
-	<key>Contentful access token</key>
-	<string>$(CONTENTFUL_ACCESS_TOKEN)</string>
 </dict>
 </plist>
