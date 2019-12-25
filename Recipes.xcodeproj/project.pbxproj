@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		6A9D670C23B3BCFD004BDF89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9D670B23B3BCFD004BDF89 /* Assets.xcassets */; };
 		6A9D670F23B3BCFD004BDF89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9D670D23B3BCFD004BDF89 /* LaunchScreen.storyboard */; };
 		6A9D671A23B3BCFD004BDF89 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D671923B3BCFD004BDF89 /* RecipesTests.swift */; };
+		6A9D672C23B3C2C0004BDF89 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A9D672B23B3C2C0004BDF89 /* Contentful */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9D672C23B3C2C0004BDF89 /* Contentful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +162,9 @@
 			dependencies = (
 			);
 			name = Recipes;
+			packageProductDependencies = (
+				6A9D672B23B3C2C0004BDF89 /* Contentful */,
+			);
 			productName = Recipes;
 			productReference = 6A9D66FF23B3BCFD004BDF89 /* Recipes.app */;
 			productType = "com.apple.product-type.application";
@@ -210,6 +215,9 @@
 				Base,
 			);
 			mainGroup = 6A9D66F623B3BCFD004BDF89;
+			packageReferences = (
+				6A9D672A23B3C2C0004BDF89 /* XCRemoteSwiftPackageReference "contentful.swift" */,
+			);
 			productRefGroup = 6A9D670023B3BCFD004BDF89 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -513,6 +521,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6A9D672A23B3C2C0004BDF89 /* XCRemoteSwiftPackageReference "contentful.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/contentful/contentful.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6A9D672B23B3C2C0004BDF89 /* Contentful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A9D672A23B3C2C0004BDF89 /* XCRemoteSwiftPackageReference "contentful.swift" */;
+			productName = Contentful;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A9D66F723B3BCFD004BDF89 /* Project object */;
 }
