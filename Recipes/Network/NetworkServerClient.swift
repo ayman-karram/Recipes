@@ -11,7 +11,7 @@ import Contentful
 
 class NetworkServerClient {
 
-    let client = Client(spaceId: ConfigurationManager.infoForKey(.contentfulSpaceID) ?? "",
+   private let client = Client(spaceId: ConfigurationManager.infoForKey(.contentfulSpaceID) ?? "",
                         accessToken: ConfigurationManager.infoForKey(.contentfulAccessToken) ?? "",
                         contentTypeClasses: [Recipe.self, Chef.self])
 
