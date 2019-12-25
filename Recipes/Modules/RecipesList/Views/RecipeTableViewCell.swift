@@ -25,9 +25,7 @@ class RecipeTableViewCell: UITableViewCell {
     //MARK:- Helpers
     private func bindViewModel() {
         if let imageURL = self.viewModel?.imageURL {
-            let options = ImageLoadingOptions(
-                transition: .fadeIn(duration: 0.5)
-            )
+            let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.5))
             Nuke.loadImage(with: imageURL, options: options, into: recipeimageView)
         }
         self.titleLabel?.text = self.viewModel?.title
