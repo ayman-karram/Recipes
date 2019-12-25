@@ -10,6 +10,7 @@ import Foundation
 
 class RecipeTableCellViewModel {
 
+    static let identifier = String(describing: RecipeTableViewCell.self)
     private (set) var title: String?
     private (set) var imageURL: URL?
 
