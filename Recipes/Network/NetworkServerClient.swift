@@ -19,12 +19,12 @@ class NetworkServerClient {
 
 //MARK: - Recipes
 extension NetworkServerClient: RecipesServiceProtocol {
-    func fetchAllRecipies(completion: @escaping(FetchRecipesResult) -> Void) {
+    func fetchAllRecipes(completion: @escaping(FetchRecipesResult) -> Void) {
         let query = QueryOn<Recipe>.where(contentTypeId: Recipe.contentTypeId)
         client.fetchArray(of: Recipe.self, matching: query) { (result: Result<HomogeneousArrayResponse<Recipe>>) in
             switch result {
-            case .success(let allRecipiesArray):
-                completion(.success(payload: allRecipiesArray.items))
+            case .success(let allRecipesArray):
+                completion(.success(payload: allRecipesArray.items))
             case .error(let error):
                 completion(.failure(error))
             }

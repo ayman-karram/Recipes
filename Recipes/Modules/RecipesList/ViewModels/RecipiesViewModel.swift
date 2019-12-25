@@ -1,5 +1,5 @@
 //
-//  RecipiesViewModel.swift
+//  RecipesViewModel.swift
 //  Recipes
 //
 //  Created by Ayman Karram on 25.12.19.
@@ -14,20 +14,27 @@ enum ListViewModelState {
     case error(Error?)
 }
 
-class RecipiesViewModel {
+class RecipesViewModel {
 
     private (set) var state: ListViewModelState = .loading
-    private (set) var recipiesCellsViewModels: [RecipeTableCellViewModel] = []
-    private var recipiesArray :[Recipe] = []
+    private (set) var recipesCellsViewModels: [RecipeTableCellViewModel] = []
+    private var recipesArray :[Recipe] = []
 
-    func fetchRecipies(networkServerClient: NetworkServerClient = NetworkServerClient()) {
+    /**
+    Fetching all recipes
+
+    Calling this method to fetch all recipes with dependency injection of network server client object  to be able to mock the network layer for unit testing
+
+    - Parameter networkServerClient: Network server client refrence.
+    */
+    func fetchRecipes(networkServerClient: NetworkServerClient = NetworkServerClient()) {
         state = .loading
-        networkServerClient.fetchAllRecipies(completion: { [weak self] result in
+        networkServerClient.fetchAllRecipes(completion: { [weak self] result in
             self?.state = .finishedLoading
             switch result {
-            case .success(let recipies):
-                self?.recipiesArray = recipies
-                self?.recipiesCellsViewModels = recipies.compactMap { RecipeTableCellViewModel(recipe: $0)}
+            case .success(let recipes):
+                self?.recipesArray = recipes
+                self?.recipesCellsViewModels = recipes.compactMap { RecipeTableCellViewModel(recipe: $0)}
             case .failure(let error):
                 self?.state = .error(error)
                 break
