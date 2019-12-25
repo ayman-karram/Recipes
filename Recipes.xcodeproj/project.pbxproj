@@ -14,6 +14,7 @@
 		6A9D670F23B3BCFD004BDF89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9D670D23B3BCFD004BDF89 /* LaunchScreen.storyboard */; };
 		6A9D671A23B3BCFD004BDF89 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D671923B3BCFD004BDF89 /* RecipesTests.swift */; };
 		6A9D672C23B3C2C0004BDF89 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A9D672B23B3C2C0004BDF89 /* Contentful */; };
+		6A9D673323B3C447004BDF89 /* NetworkServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D673223B3C447004BDF89 /* NetworkServerClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		6A9D671523B3BCFD004BDF89 /* RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9D671923B3BCFD004BDF89 /* RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTests.swift; sourceTree = "<group>"; };
 		6A9D671B23B3BCFD004BDF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A9D673223B3C447004BDF89 /* NetworkServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServerClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 			children = (
 				6A9D672423B3BDAB004BDF89 /* Application */,
 				6A9D672823B3BDF2004BDF89 /* Modules */,
-				6A9D672923B3BDF8004BDF89 /* Network */,
+				6A9D672F23B3C3F9004BDF89 /* Network */,
 				6A9D670623B3BCFD004BDF89 /* ViewController.swift */,
 				6A9D670823B3BCFD004BDF89 /* Main.storyboard */,
 			);
@@ -139,9 +141,10 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		6A9D672923B3BDF8004BDF89 /* Network */ = {
+		6A9D672F23B3C3F9004BDF89 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6A9D673223B3C447004BDF89 /* NetworkServerClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9D673323B3C447004BDF89 /* NetworkServerClient.swift in Sources */,
 				6A9D670723B3BCFD004BDF89 /* ViewController.swift in Sources */,
 				6A9D670323B3BCFD004BDF89 /* AppDelegate.swift in Sources */,
 			);
