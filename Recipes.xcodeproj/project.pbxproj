@@ -23,6 +23,7 @@
 		6A9D674A23B3D802004BDF89 /* RecipesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D674923B3D802004BDF89 /* RecipesServiceProtocol.swift */; };
 		6A9D674C23B3DCA3004BDF89 /* RecipiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D674B23B3DCA3004BDF89 /* RecipiesViewModel.swift */; };
 		6A9D674E23B3E0F1004BDF89 /* RecipeTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D674D23B3E0F1004BDF89 /* RecipeTableCellViewModel.swift */; };
+		6A9D675023B3EAFE004BDF89 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D674F23B3EAFE004BDF89 /* Bindable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		6A9D674923B3D802004BDF89 /* RecipesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesServiceProtocol.swift; sourceTree = "<group>"; };
 		6A9D674B23B3DCA3004BDF89 /* RecipiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipiesViewModel.swift; sourceTree = "<group>"; };
 		6A9D674D23B3E0F1004BDF89 /* RecipeTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableCellViewModel.swift; sourceTree = "<group>"; };
+		6A9D674F23B3EAFE004BDF89 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		6A9D672623B3BDE0004BDF89 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6A9D674F23B3EAFE004BDF89 /* Bindable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				6A9D674423B3D021004BDF89 /* Chef.swift in Sources */,
 				6A9D673323B3C447004BDF89 /* NetworkServerClient.swift in Sources */,
 				6A9D674C23B3DCA3004BDF89 /* RecipiesViewModel.swift in Sources */,
+				6A9D675023B3EAFE004BDF89 /* Bindable.swift in Sources */,
 				6A9D670723B3BCFD004BDF89 /* ViewController.swift in Sources */,
 				6A9D674723B3D4B1004BDF89 /* Result.swift in Sources */,
 				6A9D674A23B3D802004BDF89 /* RecipesServiceProtocol.swift in Sources */,
