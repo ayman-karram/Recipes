@@ -9,7 +9,7 @@
 import Foundation
 
 typealias FetchRecipesResult = RecipesResult<[Recipe], Error>
-typealias FetchRecipesCompletion = (_ result: FetchRecipesResult) -> Void
+typealias FetchRecipesCompletion = ((_ result: FetchRecipesResult) -> Void)
 
 /// Recipes service protocol to define the functions defination for recipes API
 protocol RecipesServiceProtocol {

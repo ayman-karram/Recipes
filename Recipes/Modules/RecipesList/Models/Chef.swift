@@ -19,7 +19,6 @@ class Chef: EntryDecodable, FieldKeysQueryable {
     //Fields
     var name: String?
 
-    // To be used for mock model for unit test 
     internal init(id: String, updatedAt: Date?, createdAt: Date?, localeCode: String?, name: String?) {
         self.id = id
         self.updatedAt = updatedAt
@@ -43,3 +42,9 @@ class Chef: EntryDecodable, FieldKeysQueryable {
     }
 }
 
+/// Use for unit test
+extension Chef {
+    static func mockChef() -> Chef {
+        return Chef(id: "1", updatedAt: Date(), createdAt: Date(), localeCode: "", name: "Mock Chef")
+    }
+}

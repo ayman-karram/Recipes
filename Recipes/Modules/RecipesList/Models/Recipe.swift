@@ -54,3 +54,13 @@ class Recipe: EntryDecodable, FieldKeysQueryable {
     }
 }
 
+/// Use for unit test
+extension Recipe {
+    static func mockRecipe() -> Recipe {
+        return Recipe(id: "1", updatedAt: Date(), createdAt: Date(),
+                      localeCode: "",
+                      chef: Chef.mockChef(),
+                      photo: nil,
+                      title: "Soup")
+    }
+}

@@ -9,17 +9,14 @@
 import Foundation
 import Contentful
 
-class NetworkServerClient {
+class NetworkServerClient: RecipesServiceProtocol {
 
    private let client = Client(spaceId: ConfigurationManager.infoForKey(.contentfulSpaceID) ?? "",
                         accessToken: ConfigurationManager.infoForKey(.contentfulAccessToken) ?? "",
                         contentTypeClasses: [Recipe.self, Chef.self])
 
-}
-
-//MARK: - Recipes
-extension NetworkServerClient: RecipesServiceProtocol {
-    func fetchAllRecipes(completion: @escaping(FetchRecipesResult) -> Void) {
+    //MARK: - Recipes
+    func fetchAllRecipes(completion: @escaping FetchRecipesCompletion) {
         let query = QueryOn<Recipe>.where(contentTypeId: Recipe.contentTypeId)
         client.fetchArray(of: Recipe.self, matching: query) { (result: Result<HomogeneousArrayResponse<Recipe>>) in
             switch result {
