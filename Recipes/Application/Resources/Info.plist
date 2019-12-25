@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>Contentful space id</key>
+	<string>$(CONTENTFUL_SPACE_ID)</string>
+	<key>Contentful access token</key>
+	<string>$(CONTENTFUL_ACCESS_TOKEN)</string>
 </dict>
 </plist>

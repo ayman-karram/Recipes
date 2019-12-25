@@ -15,6 +15,8 @@
 		6A9D671A23B3BCFD004BDF89 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D671923B3BCFD004BDF89 /* RecipesTests.swift */; };
 		6A9D672C23B3C2C0004BDF89 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 6A9D672B23B3C2C0004BDF89 /* Contentful */; };
 		6A9D673323B3C447004BDF89 /* NetworkServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D673223B3C447004BDF89 /* NetworkServerClient.swift */; };
+		6A9D673823B3C7FC004BDF89 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D673723B3C7FC004BDF89 /* ConfigurationManager.swift */; };
+		6A9D673B23B3C909004BDF89 /* ConfigurationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D673A23B3C909004BDF89 /* ConfigurationManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,10 @@
 		6A9D671923B3BCFD004BDF89 /* RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTests.swift; sourceTree = "<group>"; };
 		6A9D671B23B3BCFD004BDF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A9D673223B3C447004BDF89 /* NetworkServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServerClient.swift; sourceTree = "<group>"; };
+		6A9D673523B3C588004BDF89 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		6A9D673623B3C603004BDF89 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		6A9D673723B3C7FC004BDF89 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
+		6A9D673A23B3C909004BDF89 /* ConfigurationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		6A9D671823B3BCFD004BDF89 /* RecipesTests */ = {
 			isa = PBXGroup;
 			children = (
+				6A9D673923B3C8DB004BDF89 /* ConfigurationFiles */,
 				6A9D671923B3BCFD004BDF89 /* RecipesTests.swift */,
 				6A9D671B23B3BCFD004BDF89 /* Info.plist */,
 			);
@@ -106,6 +113,7 @@
 				6A9D672723B3BDE5004BDF89 /* Protocols */,
 				6A9D672623B3BDE0004BDF89 /* Helpers */,
 				6A9D672523B3BDBC004BDF89 /* Resources */,
+				6A9D673423B3C552004BDF89 /* ConfigurationFiles */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -147,6 +155,24 @@
 				6A9D673223B3C447004BDF89 /* NetworkServerClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		6A9D673423B3C552004BDF89 /* ConfigurationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6A9D673723B3C7FC004BDF89 /* ConfigurationManager.swift */,
+				6A9D673523B3C588004BDF89 /* Debug.xcconfig */,
+				6A9D673623B3C603004BDF89 /* Release.xcconfig */,
+			);
+			path = ConfigurationFiles;
+			sourceTree = "<group>";
+		};
+		6A9D673923B3C8DB004BDF89 /* ConfigurationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6A9D673A23B3C909004BDF89 /* ConfigurationManagerTests.swift */,
+			);
+			path = ConfigurationFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9D673823B3C7FC004BDF89 /* ConfigurationManager.swift in Sources */,
 				6A9D673323B3C447004BDF89 /* NetworkServerClient.swift in Sources */,
 				6A9D670723B3BCFD004BDF89 /* ViewController.swift in Sources */,
 				6A9D670323B3BCFD004BDF89 /* AppDelegate.swift in Sources */,
@@ -266,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9D673B23B3C909004BDF89 /* ConfigurationManagerTests.swift in Sources */,
 				6A9D671A23B3BCFD004BDF89 /* RecipesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,11 +444,13 @@
 		};
 		6A9D671F23B3BCFD004BDF89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9D673523B3C588004BDF89 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MW98PXXQAT;
 				INFOPLIST_FILE = Recipes/Application/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -428,17 +458,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		6A9D672023B3BCFD004BDF89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9D673623B3C603004BDF89 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MW98PXXQAT;
 				INFOPLIST_FILE = Recipes/Application/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,12 +478,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		6A9D672223B3BCFD004BDF89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9D673523B3C588004BDF89 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -474,6 +507,7 @@
 		};
 		6A9D672323B3BCFD004BDF89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9D673623B3C603004BDF89 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
