@@ -32,7 +32,7 @@ class RecipeDetailsViewController: UIViewController {
             return
         }
         if let imageURL = self.viewModel?.imageURL {
-            let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.5))
+            let options = ImageLoadingOptions(transition: .fadeIn(duration: 0.8))
             Nuke.loadImage(with: imageURL, options: options, into: recipeImageView)
         }
         recipeTitleLabel.text = viewModel.title

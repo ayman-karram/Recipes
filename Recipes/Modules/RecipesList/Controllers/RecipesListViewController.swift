@@ -16,7 +16,6 @@ class RecipesListViewController: UIViewController {
 
     //MARK:- Variables
     private let viewModel: RecipesViewModel = RecipesViewModel()
-
     private let naviagtionTitle = "Recipes"
 
     //MARK:- View Life cycle
@@ -45,16 +44,18 @@ class RecipesListViewController: UIViewController {
                 self?.show(loading: true)
             case .finishedLoading:
                 self?.show(loading: false)
-            case .error(_):
+            case .error(let error):
                 self?.show(loading: false)
+                self?.showAlertWith(error: error)
             }
         })
     }
 
     private func show(loading: Bool) {
         DispatchQueue.main.async {
-            self.recipesTableView?.isHidden = loading
+            self.recipesTableView.isHidden = loading
             self.activityIndicator.isHidden = !loading
+            loading == true ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
         }
     }
 
@@ -64,6 +65,15 @@ class RecipesListViewController: UIViewController {
         recipesTableView.delegate = self
         recipesTableView.estimatedRowHeight = UITableView.automaticDimension
         recipesTableView.tableFooterView = UIView()
+    }
+
+    private func showAlertWith(error: Error?){
+        let alert = SingleButtonAlert(
+            title: "Could not connect to server. Check your network and try again later.",
+            message: error?.localizedDescription ?? "",
+            action: AlertAction(buttonTitle: "OK", handler: {})
+        )
+        self.presentSingleButtonDialog(alert: alert)
     }
 }
 
@@ -87,6 +97,8 @@ extension RecipesListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsViewModel = RecipeDetailsViewModel(recipe: viewModel.recipesArray[indexPath.row])
         let detailsCoordinator = RecipeDetailsCoordinator(navigationController: self.navigationController ?? UINavigationController(), detailsViewModel: detailsViewModel)
-        detailsCoordinator.show(present: true)
+        DispatchQueue.main.async {
+            detailsCoordinator.show(present: true)
+        }
     }
 }
