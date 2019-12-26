@@ -19,7 +19,7 @@ class RecipesViewModel {
     //MARK:- Variables
     private (set) var state: Bindable<ListViewModelState> = Bindable(.loading)
     private (set) var recipesCellsViewModels: Bindable<[RecipeTableCellViewModel]> = Bindable([])
-    private var recipesArray :[Recipe] = []
+    private (set) var recipesArray :[Recipe] = []
     private let networkServerClient: NetworkServerClient
 
     /// init RecipesViewModel with dependency injection of network server client object  to be able to mock the network layer for unit testing

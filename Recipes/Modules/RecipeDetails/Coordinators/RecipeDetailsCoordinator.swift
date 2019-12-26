@@ -12,10 +12,12 @@ class RecipeDetailsCoordinator: Coordinator {
 
     //MARK:- Variables
     var navigationController: UINavigationController
+    var detailsViewModel: RecipeDetailsViewModel
 
     //MARK:- Init
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, detailsViewModel: RecipeDetailsViewModel) {
         self.navigationController = navigationController
+        self.detailsViewModel = detailsViewModel
     }
 
     //MARK:- Helpers
@@ -25,8 +27,8 @@ class RecipeDetailsCoordinator: Coordinator {
 
     func show(present: Bool = false) {
         let recipeDetailsViewController = RecipeDetailsViewController()
+        recipeDetailsViewController.viewModel = detailsViewModel
         if present {
-            recipeDetailsViewController.modalTransitionStyle = .crossDissolve
             self.navigationController.viewControllers.last?.present(recipeDetailsViewController,
                                                                     animated: true, completion: nil)
         } else {

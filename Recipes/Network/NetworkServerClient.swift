@@ -13,7 +13,7 @@ class NetworkServerClient: RecipesServiceProtocol {
 
    private let client = Client(spaceId: ConfigurationManager.infoForKey(.contentfulSpaceID) ?? "",
                         accessToken: ConfigurationManager.infoForKey(.contentfulAccessToken) ?? "",
-                        contentTypeClasses: [Recipe.self, Chef.self])
+                        contentTypeClasses: [Recipe.self, Chef.self, Tag.self])
 
     //MARK: - Recipes
     func fetchAllRecipes(completion: @escaping FetchRecipesCompletion) {

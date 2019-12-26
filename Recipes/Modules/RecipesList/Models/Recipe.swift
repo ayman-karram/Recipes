@@ -18,8 +18,10 @@ class Recipe: EntryDecodable, FieldKeysQueryable {
     var localeCode: String?
     //Fields
     var title: String?
+    var description: String?
     var chef: Chef?
     var photo: Asset?
+    var tags: [Tag]?
 
     // To be used for mock model for unit test
     init(id: String, updatedAt: Date?, createdAt: Date?, localeCode: String?, chef: Chef?, photo: Asset?, title: String?) {
@@ -40,17 +42,20 @@ class Recipe: EntryDecodable, FieldKeysQueryable {
         createdAt       = sys.createdAt
         let fields      = try decoder.contentfulFieldsContainer(keyedBy: Recipe.FieldKeys.self)
         title = try fields.decodeIfPresent(String.self, forKey: .title)
+        description = try fields.decodeIfPresent(String.self, forKey: .description)
         try fields.resolveLink(forKey: .photo, decoder: decoder) { [weak self] image in
             self?.photo = image as? Asset
         }
         try fields.resolveLink(forKey: .chef, decoder: decoder) { [weak self] chef in
             self?.chef = chef as? Chef
         }
+        try fields.resolveLinksArray(forKey: .tags, decoder: decoder) { [weak self] tags in
+            self?.tags = tags as? [Tag]
+        }
     }
 
     enum FieldKeys: String, CodingKey {
-        case title, photo
-        case chef = "chef"
+        case title, photo, description, tags, chef
     }
 }
 

@@ -83,4 +83,10 @@ extension RecipesListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsViewModel = RecipeDetailsViewModel(recipe: viewModel.recipesArray[indexPath.row])
+        let detailsCoordinator = RecipeDetailsCoordinator(navigationController: self.navigationController ?? UINavigationController(), detailsViewModel: detailsViewModel)
+        detailsCoordinator.show(present: true)
+    }
 }
