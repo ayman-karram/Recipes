@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 struct AlertAction {
     let buttonTitle: String
     let handler: (() -> Void)?

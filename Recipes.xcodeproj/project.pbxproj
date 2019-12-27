@@ -39,6 +39,8 @@
 		6A9D678A23B42529004BDF89 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D678923B42529004BDF89 /* Tag.swift */; };
 		6A9D678F23B431CD004BDF89 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D678E23B431CD004BDF89 /* Alert.swift */; };
 		6A9D679223B43219004BDF89 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D679123B43219004BDF89 /* UIViewControllerExtension.swift */; };
+		6AB9FFE123B6C3A500FFFBA3 /* EntryDecodableWithName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB9FFE023B6C3A500FFFBA3 /* EntryDecodableWithName.swift */; };
+		6AB9FFE323B6C4FA00FFFBA3 /* RecipeDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB9FFE223B6C4FA00FFFBA3 /* RecipeDetailsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		6A9D678923B42529004BDF89 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		6A9D678E23B431CD004BDF89 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		6A9D679123B43219004BDF89 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		6AB9FFE023B6C3A500FFFBA3 /* EntryDecodableWithName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDecodableWithName.swift; sourceTree = "<group>"; };
+		6AB9FFE223B6C4FA00FFFBA3 /* RecipeDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				6A9D670223B3BCFD004BDF89 /* AppDelegate.swift */,
+				6AB9FFDF23B6C37D00FFFBA3 /* Models */,
 				6A9D679023B431E3004BDF89 /* Extensions */,
 				6A9D672723B3BDE5004BDF89 /* Protocols */,
 				6A9D672623B3BDE0004BDF89 /* Helpers */,
@@ -327,6 +332,7 @@
 			children = (
 				6A9D675823B3ED15004BDF89 /* RecipesViewModelTests.swift */,
 				6A9D676523B3FE00004BDF89 /* RecipeTableCellViewModelTests.swift */,
+				6AB9FFE223B6C4FA00FFFBA3 /* RecipeDetailsViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -390,6 +396,14 @@
 				6A9D679123B43219004BDF89 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6AB9FFDF23B6C37D00FFFBA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6AB9FFE023B6C3A500FFFBA3 /* EntryDecodableWithName.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +523,7 @@
 				6A9D677423B404DD004BDF89 /* RecipeTableViewCell.swift in Sources */,
 				6A9D674C23B3DCA3004BDF89 /* RecipesViewModel.swift in Sources */,
 				6A9D678F23B431CD004BDF89 /* Alert.swift in Sources */,
+				6AB9FFE123B6C3A500FFFBA3 /* EntryDecodableWithName.swift in Sources */,
 				6A9D675023B3EAFE004BDF89 /* Bindable.swift in Sources */,
 				6A9D678A23B42529004BDF89 /* Tag.swift in Sources */,
 				6A9D674723B3D4B1004BDF89 /* Result.swift in Sources */,
@@ -533,6 +548,7 @@
 				6A9D676623B3FE00004BDF89 /* RecipeTableCellViewModelTests.swift in Sources */,
 				6A9D675923B3ED15004BDF89 /* RecipesViewModelTests.swift in Sources */,
 				6A9D673B23B3C909004BDF89 /* ConfigurationManagerTests.swift in Sources */,
+				6AB9FFE323B6C4FA00FFFBA3 /* RecipeDetailsViewModelTests.swift in Sources */,
 				6A9D671A23B3BCFD004BDF89 /* RecipesTests.swift in Sources */,
 				6A9D675423B3ECA4004BDF89 /* BindableTests.swift in Sources */,
 			);

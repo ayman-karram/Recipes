@@ -77,6 +77,7 @@ class RecipesListViewController: UIViewController {
     }
 }
 
+//MARK:- UITableViewDelegate, UITableViewDataSource
 extension RecipesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.recipesCellsViewModels.value.count

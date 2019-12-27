@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RecipeTableCellViewModel {
+struct RecipeTableCellViewModel {
 
     static let identifier = String(describing: RecipeTableViewCell.self)
     private (set) var title: String?

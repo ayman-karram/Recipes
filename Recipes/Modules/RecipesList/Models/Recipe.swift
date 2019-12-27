@@ -24,7 +24,13 @@ class Recipe: EntryDecodable, FieldKeysQueryable {
     var tags: [Tag]?
 
     // To be used for mock model for unit test
-    init(id: String, updatedAt: Date?, createdAt: Date?, localeCode: String?, chef: Chef?, photo: Asset?, title: String?) {
+    init(id: String, updatedAt: Date?, createdAt: Date?,
+         localeCode: String?,
+         chef: Chef?,
+         photo: Asset?,
+         title: String?,
+         description: String,
+         tags: [Tag]?) {
         self.id = id
         self.updatedAt = updatedAt
         self.createdAt = createdAt
@@ -32,6 +38,8 @@ class Recipe: EntryDecodable, FieldKeysQueryable {
         self.chef = chef
         self.photo = photo
         self.title = title
+        self.description = description
+        self.tags = tags
     }
 
     required init(from decoder: Decoder) throws {
@@ -59,13 +67,15 @@ class Recipe: EntryDecodable, FieldKeysQueryable {
     }
 }
 
-/// Use for unit test
 extension Recipe {
     static func mockRecipe() -> Recipe {
         return Recipe(id: "1", updatedAt: Date(), createdAt: Date(),
                       localeCode: "",
                       chef: Chef.mockChef(),
                       photo: nil,
-                      title: "Soup")
+                      title: "Soup",
+                      description: "Vegan Soup",
+                      tags: [Tag.mockTagWith(id: "1", name: "Vegan"),
+                             Tag.mockTagWith(id: "2", name: "Healthy")])
     }
 }

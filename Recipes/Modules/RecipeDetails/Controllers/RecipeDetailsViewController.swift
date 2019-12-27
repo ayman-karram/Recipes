@@ -23,11 +23,11 @@ class RecipeDetailsViewController: UIViewController {
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        bindViewModel()
     }
 
     //MARK:- Helpers
-    func setupView(){
+    func bindViewModel(){
         guard let viewModel = self.viewModel else {
             return
         }

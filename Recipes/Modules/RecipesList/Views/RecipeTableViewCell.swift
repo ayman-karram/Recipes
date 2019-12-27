@@ -30,5 +30,4 @@ class RecipeTableViewCell: UITableViewCell {
         }
         self.titleLabel?.text = self.viewModel?.title
     }
-    
 }
