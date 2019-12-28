@@ -16,7 +16,7 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var tagesLabel: UILabel!
     @IBOutlet weak var chefNameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     //MARK:- Variables
     var viewModel: RecipeDetailsViewModel?
 
@@ -38,7 +38,6 @@ class RecipeDetailsViewController: UIViewController {
         recipeTitleLabel.text = viewModel.title
         chefNameLabel.text = viewModel.chefName
         tagesLabel.text = viewModel.tags
-        descriptionLabel.text = viewModel.description
+        descriptionTextView.text = viewModel.description
     }
-
 }
