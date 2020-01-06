@@ -14,6 +14,6 @@ class RecipeTableCellViewModelTests: XCTestCase {
     func testInit() {
         let viewModel = RecipeTableCellViewModel(recipe: Recipe.mockRecipe())
         XCTAssertNotNil(viewModel)
-        XCTAssertEqual(viewModel.title, viewModel.title)
+        XCTAssertEqual(viewModel.title, Recipe.mockRecipe().title)
     }
 }
